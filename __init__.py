@@ -20,7 +20,7 @@ class QuotingSkill(MycroftSkill):
             require("QuoteKeyword").build()
         self.register_intent(quote_intent, self.handle_quote_intent)
 
-    def handle_thank_you_intent(self, message):
+    def handle_quote_intent(self, message):
         self.speak_dialog("quote")
 
     def stop(self):
