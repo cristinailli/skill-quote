@@ -20,7 +20,7 @@ class QuotingSkill(MycroftSkill):
         quoteone = "Don't worry about what anybody else is going to do. The best way to predict the future is to invent it. By Alan Kay"
 
     def initialize(self):
-        intent = IntentBuilder("QuotingSkill").require(
+        intent = IntentBuilder("QuotingIntent").require(
             "QuotingKeyword").build()
         self.register_intent(intent, self.handle_intent)
         self.add_event("mycroft.quote", self.quote, False)
