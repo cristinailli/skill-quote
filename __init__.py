@@ -26,14 +26,14 @@ class QuotingSkill(MycroftSkill):
         self.add_event("mycroft.quote", self.quote, False)
 
     def quote(self, quoteone):
-        self.speak = quoteone
+        self.speak(quoteone)
 
     def handle_intent(self, message):
         quotetwo = "Premature optimization is the root of all evil (or at least most of it) in programming. By Donald Knuth"
         try:
             self.speak_dialog('quoting')
             time.sleep(3)
-            self.speak = quotetwo
+            self.speak(quoteone)
 
         except Exception as e:
             LOGGER.error("Error: {0}".format(e))
