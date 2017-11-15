@@ -13,11 +13,7 @@ class QuotingSkill(MycroftSkill):
     def __init__(self):
         super(QuotingSkill, self).__init__(name="QuotingSkill")
 
-    def initialize(self):
-        # self.load_data_files(dirname(__file__))
-        quote_intent = IntentBuilder("QuoteIntent").require("QuoteKeyword").build()
-        self.register_intent(quote_intent, self.handle_quote_intent)
-
+    @intent_handler(IntentBuilder("QuoteIntent").require("QuoteKeyword"))
     def handle_quote_intent(self, message):
         self.speak_dialog("quote")
 
